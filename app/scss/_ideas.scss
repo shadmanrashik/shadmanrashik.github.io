@@ -1,0 +1,102 @@
+.ideas {
+    text-align: center;
+
+    h2 {
+        padding-bottom: 20px;
+    }
+
+    &__item {
+        background: $ligherGreen;
+        margin-bottom: 1.25rem;
+        padding: 1.875rem 0;
+        position: relative;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
+            padding: 1.875rem;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 8px;
+                width: 85%;
+                background: #fff;
+            }
+
+            &:first-child {
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+            
+            &:last-child {
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+
+        > *:not(img) {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+
+            @include breakpoint-up(large) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &-heading {
+            color: $darker;
+            padding-bottom: .625rem;
+            font-size: 1.75rem;
+            line-height: 2.1875rem;
+        }
+
+        .image_wrapper {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+
+            img {
+                display: inline;
+                max-width: none;
+            }
+        }
+
+        p {
+            padding-bottom: 1.25rem;
+        }
+
+        img {
+            padding-bottom: 1.25rem;
+        }
+    }
+
+    .cicle {
+        background: $darker;
+        border-radius: 50%;
+        color: white;
+        display: inline-block;
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2.6875rem;
+        line-height: 4.5rem;
+        font-weight: 900;
+        box-shadow: 0 0 24.78px 0 rgba(0, 0, 0, 25%);
+        
+        margin-bottom: .625rem;
+    }
+
+    .label-wrapper {
+        gap: .25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .label {
+        font-weight: 600;
+    }
+}

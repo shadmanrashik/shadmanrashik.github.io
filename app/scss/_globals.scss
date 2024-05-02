@@ -1,0 +1,350 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    color: $text;
+
+    &.noscroll {
+      overflow: hidden;
+    }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+button,
+.button {
+    position: relative;
+    background-image: linear-gradient(#EA7500, #DB3600);
+    color: $white;
+    border: none;
+    border-radius: .625rem;
+    box-shadow: 0 .25rem .25rem 0 rgb(0 0 0 / 25%);
+    cursor: pointer;
+
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    font-weight: 700;
+
+    // transition: all ease 2s;
+
+    &:hover {
+        background: #E86D01;
+        box-shadow: none;
+    }
+}
+
+
+
+a {
+    color: $link;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+    @include breakpoint-up(medium) {
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
+    }
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 2.1875rem;
+
+    @include breakpoint-up(medium) {
+        font-size: 2.8125rem;
+        line-height: 3.75rem;
+    }
+
+    @include breakpoint-up(large) {
+        font-size: 3.725rem;
+        line-height: 4.6875rem;
+    }
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 2.1875rem;
+
+    @include breakpoint-up(medium) {
+        font-size: 2.25rem;
+        line-height: 2.8125rem;
+    }
+
+    @include breakpoint-up(large) {
+        font-size: 3.75rem;
+        line-height: 4.6875rem;
+    }
+}
+
+
+h2.section--heading {
+    color: $darker;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+}
+
+h2.section--heading {
+    overflow: hidden;
+}
+
+h2.section--heading>span {
+    position: relative;
+    display: inline-block;
+}
+
+h2.section--heading>span:before,
+h2.section--heading>span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 1px solid #D9D9D9;
+    width: 100vw;
+    margin: 0 20px;
+}
+
+h2.section--heading>span:before {
+    right: 100%;
+}
+
+h2.section--heading>span:after {
+    left: 100%;
+}
+
+
+
+h3 {
+    font-weight: 900;
+}
+
+main {
+    min-height: 32rem;
+}
+
+// Text align
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// text color
+.text-white {
+    color: #fff;
+}
+
+// font-weight
+.text-normal {
+    font-weight: 400;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-extra-bold {
+    font-weight: 900;
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.container {
+    max-width: 72.5rem;
+    margin: auto;
+
+    &--wlimit {
+        @include breakpoint-up(large) {
+            width: 95%;
+            max-width: 65rem;
+        }
+    }
+
+    &--pall {
+        padding: 1.875rem 1.25rem;
+
+        @include breakpoint-up(large) {
+            padding: 2.5rem 3.75rem;
+        }
+    }
+
+    &--px {
+        padding: 0 0.625rem;
+
+        @include breakpoint-up(medium) {
+            padding: 0 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            padding: 0 3.75rem;
+        }
+    }
+
+    &--py {
+        padding-top: 1.875rem;
+        padding-bottom: 1.875rem;
+
+        @include breakpoint-up(medium) {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &--pt {
+        padding-top: 1.875rem;
+
+        @include breakpoint-up(medium) {
+            padding-top: 2.5rem;
+        }
+    }
+
+    &--pt-small {
+        padding-top: .9375rem;
+
+        @include breakpoint-up(medium) {
+            padding-top: .9375rem;
+        }
+    }
+
+    &--pb {
+        padding-bottom: 1.875rem;
+
+        @include breakpoint-up(medium) {
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &--pb-small {
+        padding-bottom: .9375rem;
+
+        @include breakpoint-up(medium) {
+            padding-bottom: .9375rem;
+        }
+    }
+
+    &--mt {
+        margin-top: 1.875rem;
+
+        @include breakpoint-up(large) {
+            margin-top: 2.5rem;
+        }
+    }
+
+    &--mt-small {
+        margin-top: .9375rem;
+
+        @include breakpoint-up(large) {
+            margin-top: .9375rem;
+        }
+    }
+
+    &--mb {
+        margin-bottom: 1.875rem;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &--mb-small {
+        margin-bottom: .9375rem;
+
+        @include breakpoint-up(large) {
+            margin-bottom: .9375rem;
+        }
+    }
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-end {
+        justify-content: end;
+    }
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+.label {
+    background-color: $niceGreen;
+    color: $white;
+    border-radius: .5rem;
+    padding: .25rem .3125rem;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.375rem;
+
+    @include breakpoint-up(medium) {
+        font-size: 1.25rem;
+        line-height: 1.5625rem;
+    }
+}

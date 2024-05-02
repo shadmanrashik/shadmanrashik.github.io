@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    padding: 0.625rem 0.9375rem;
+
+    @include breakpoint-up(medium) {
+        padding: 1.5625rem;
+    }
+
+    @include breakpoint-up(large) {
+        padding: 1.875rem 3.75rem;
+    }
+
+    &__logo {
+        img {
+            @include breakpoint-up(medium) {
+                width: 11.875rem;
+                height: auto;
+            }
+
+            @include breakpoint-up(large){
+                width: 15.875rem;
+            }
+        }
+    }
+
+    img.steps-top {
+        position: absolute;
+        top: 0;
+        left: -30px;
+    }
+}

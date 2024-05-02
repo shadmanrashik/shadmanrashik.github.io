@@ -1,0 +1,12 @@
+.footer {
+    border-top: .0625rem solid #D9D9D9;
+
+    @include breakpoint-up(medium) {
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
+    }
+
+    &__links {
+        padding-top: .625rem;
+    }
+}

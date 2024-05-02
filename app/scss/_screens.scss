@@ -1,0 +1,84 @@
+.screens {
+    background-color: #F4F4F4;
+    padding: 1.875rem 1.625rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+        border-radius: 1.25rem;
+        padding: 1.875rem 5.625rem;
+    }
+
+    // h3 {
+    //     padding-bottom: 1.25rem;
+    // }
+
+    &__heading {
+        color: $darker;
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
+        font-weight: 900;
+        padding-bottom: 1.25rem;
+    }
+
+    &__grid {
+        padding: 0 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        // @include breakpoint-up(medium) {
+        //     grid-template-columns: repeat(4, 1fr);
+        // }
+
+        @include breakpoint-up(large) {
+            padding: 0;
+            //     grid-template-columns: repeat(7, 1fr);
+        }
+    }
+
+    &__item {
+        flex: 1 0 50%;
+
+        @include breakpoint-up(medium) {
+            flex: 1 0 33.33%;
+        }
+
+        @include breakpoint-up(large) {
+            flex: 1;
+        }
+
+        &:last-child {
+            @include breakpoint-down(medium) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                >img {
+                    width: 1.75rem;
+                    margin: 0;
+                }
+
+                >p {
+                    padding-bottom: .625rem;
+                }
+            }
+        }
+
+        >img {
+            margin: 0 auto;
+        }
+
+        >p {
+            padding: .625rem;
+
+            @include breakpoint-down(medium) {
+                padding-bottom: 1.375rem;
+            }
+
+            @include breakpoint-up(large) {
+                padding: .625rem 0;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+        }
+    }
+}

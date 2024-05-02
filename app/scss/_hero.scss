@@ -1,0 +1,60 @@
+.hero {
+    position: relative;
+
+    h1 {
+        color: $darker;
+        font-weight: 800;
+
+        .text-normal {
+            font-weight: 300;
+        }
+
+        .green-gradient {
+            color: transparent;
+            background-image: linear-gradient(30deg, #30B11B, #144B0B);
+            background-clip: text;
+        }
+
+        .text-block-xlg {
+            display: block;
+
+            font-size: 3.75rem;
+            line-height: 3.8125rem;
+            font-weight: 900;
+
+            @include breakpoint-up(medium) {
+                font-size: 6.25rem;
+                line-height: 7.1875rem;
+                padding-bottom: .8125rem;
+            }
+
+            @include breakpoint-up(large) {
+                font-size: 8.75rem;
+                line-height: 7.8125rem;
+            }
+        }
+    }
+
+    &__subtext {
+        // font-size: 0.875rem;
+        font-size: 1rem;
+        line-height: 1.4375rem;
+        font-weight: 500;
+
+        @include breakpoint-up(medium) {
+            font-size: 1.125rem;
+            line-height: 1.5625rem;
+        }
+    }
+
+    img.steps-middle {
+        position: absolute;
+        bottom: 1.5625rem;
+        right: 9.375rem;
+        z-index: -1;
+
+        @media only screen and (max-width: 1150px) {
+            bottom: -2.4375rem;
+        }
+    }
+}

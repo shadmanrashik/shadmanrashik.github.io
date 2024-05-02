@@ -1,0 +1,18 @@
+.success {
+    &__heading {
+        color: $darker;
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
+        font-weight: 900;
+        padding-top: 1.875rem;
+    }
+
+    &__text {
+        color: #555;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+
+        padding-top: .3125rem;
+        // padding-bottom: 1.875rem;
+    }
+}

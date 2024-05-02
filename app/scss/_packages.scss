@@ -1,0 +1,188 @@
+.packages {
+    h2 {
+        padding: 0 1.25rem 1.875rem;
+    }
+
+    &__grid {
+        @include breakpoint-up(medium) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        @include breakpoint-up(large) {
+            align-items: baseline;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        color: $darker;
+        background: linear-gradient(#A1F293 0%, #D1F8BA 5%);
+        padding: 1.875rem 1.25rem;
+        position: relative;
+        margin-bottom: 1.25rem;
+        overflow: hidden;
+
+        @include breakpoint-up(medium) {
+            padding: 1.875rem .625rem;
+            border-radius: 10px;
+        }
+
+        >*:not(:first-child) {
+            margin-top: 1.25rem;
+        }
+
+        &--headline {
+            font-weight: 900;
+            font-size: 1.125rem;
+            line-height: 1.4375rem;
+
+            > img {
+                padding-right: .375rem;
+            }
+        }
+
+        >button {
+            width: 100%;
+        }
+
+        &.ribbon::before {
+            content: "SUGGESTED STARTING POINT";
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1rem;
+            line-height: 1.125rem;
+            padding: .3125rem 1rem;
+            background: #30B11B;
+            color: #fff;
+            font-weight: 700;
+            transform: rotate(45deg) translate(29%, -30%);
+            width: 200px;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        margin: 0 auto;
+        // box-shadow: 0 0 30px 0 rgba(0, 0, 0, 25%);
+    }
+
+    &__item-heading {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-align: center;
+
+        @include breakpoint-up(large) {
+            font-size: 2.25rem;
+            line-height: 2.8125rem;
+        }
+    }
+
+    &__pricing {
+        text-align: right;
+
+        .xtra-lg-text {
+            font-size: 2rem;
+            line-height: 2.5rem;
+            padding: 0 .25rem 0 .625rem;
+
+            @include breakpoint-up(large) {
+                font-size: 2.25rem;
+                line-height: 2.1875rem;
+            }
+        }
+    }
+
+    &__inner-green {
+        background-color: #50A342;
+        border-radius: .625rem;
+        padding: .625rem;
+        font-weight: 300;
+
+        > *:not(:first-child) {
+            margin-top: .3125rem;
+        }
+
+        .packages__item--headline { 
+            line-height: 36px;
+        }
+        
+        @include breakpoint-up(large) {
+            font-size: 1.125rem;
+            line-height: 1.4375rem;
+        }        
+
+        > hr {
+            margin-top: .9375rem;
+            margin-bottom: .9375rem;
+        }
+    }
+
+    &__li {
+        position: relative;
+        padding-left: 1.1875rem;
+
+        &:not(:first-child) {
+            margin-top: .625rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: .3125rem;
+            left: 0;
+            height: .875rem;
+            width: .875rem;
+            background: #30B11B;
+            border-radius: 50%;
+        }
+
+        .text-bold {
+            font-size: 1.125rem;
+            line-height: 1.4375rem;
+        }
+
+        @include breakpoint-up(large) {
+            font-size: 1.125rem;
+            line-height: 1.4375rem;
+        }
+    }
+
+    &__iteration {
+        background-color: $darker;
+        border-radius: .625rem;
+        padding: 10px;
+        font-size: 1.125rem;
+        font-weight: 300;
+
+        > img {
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .packages__item--headline {
+            text-align: center;
+            line-height: 2.25rem;
+        }
+    }
+
+    .rounded {
+        background: $darker;
+        padding: 3px 9px;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
+
+    .icon-stop {
+        display: inline-block;
+        background: #fff;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 4px;
+
+        margin-right: .375rem;
+    }
+    
+}
