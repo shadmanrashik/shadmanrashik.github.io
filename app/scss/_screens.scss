@@ -53,6 +53,13 @@
                     padding-bottom: .625rem;
                 }
             }
+
+            @include breakpoint-up(large) {
+                >p {
+                    font-size: 1.125rem;
+                    line-height: 1.4375rem;
+                }
+            }
         }
 
         >img {

@@ -6,8 +6,9 @@ const navbar = document.getElementById("heronav");
 const mainNav = document.getElementById("navbar");
 
 // Get the offset position of the navbar
-const sticky = navbar.offsetTop;
-
+let sticky = navbar.offsetTop;
+// Update sticky top offset
+window.addEventListener("resize", (event) => { sticky = navbar.offsetTop });
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
 	if (window.scrollY >= sticky) {
@@ -22,10 +23,8 @@ const body = document.querySelector('body');
 const nav = document.querySelector('.nav');
 const overlay = document.querySelector('.overlay');
 const fadeElems = document.querySelectorAll('.has-fade');
-
 btnHamburger.addEventListener('click', function (e) {
 	e.preventDefault();
-
 	if (nav.classList.contains('open')) { // Close Hamburger Menu
 		body.classList.remove('noscroll');
 		nav.classList.remove('open');
@@ -33,7 +32,6 @@ btnHamburger.addEventListener('click', function (e) {
 			element.classList.remove('fade-in');
 			element.classList.add('fade-out');
 		});
-
 	}
 	else { // Open Hamburger Menu
 		body.classList.add('noscroll');
@@ -51,13 +49,13 @@ menuLinks.forEach(link => {
 		e.preventDefault();
 		e.stopPropagation();
 		if (nav.classList.contains('open')) document.getElementById('btnHamburger').click();
-        let scollNegetiveMargin = window.innerWidth < 1024 ? 40 : 50
+		let scollNegetiveMargin = window.innerWidth < 1024 ? 40 : 50
 		let targetElem = document.querySelector(e.target.getAttribute('href'));
 		let scrollDepth = targetElem.getBoundingClientRect().top + window.scrollY - scollNegetiveMargin;
 		window.scrollTo({
 			top: scrollDepth,
 			left: 0,
 			behavior: "smooth",
-		  });
+		});
 	});
 });
