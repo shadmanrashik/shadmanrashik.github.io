@@ -8,5 +8,9 @@
 
     &__links {
         padding-top: .625rem;
+
+        >a {
+            font-weight: 400;
+        }
     }
 }

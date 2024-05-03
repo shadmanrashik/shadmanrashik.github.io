@@ -44,3 +44,19 @@ btnHamburger.addEventListener('click', function (e) {
 		});
 	}
 });
+
+const menuLinks = document.querySelectorAll('.navigation__links, .nav__menu > a')
+menuLinks.forEach(link => {
+	link.addEventListener('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if (nav.classList.contains('open')) document.getElementById('btnHamburger').click();
+		let targetElem = document.querySelector(e.target.getAttribute('href'));
+		let scrollDepth = targetElem.getBoundingClientRect().top + window.scrollY - 80;
+		window.scrollTo({
+			top: scrollDepth,
+			left: 0,
+			behavior: "smooth",
+		  });
+	});
+});

@@ -5,14 +5,22 @@
         line-height: 1.4375rem;
         font-weight: 900;
         padding-top: 1.875rem;
+        text-transform: uppercase;
     }
 
     &__text {
         color: #555;
-        font-size: 1.25rem;
-        line-height: 1.75rem;
 
         padding-top: .3125rem;
         // padding-bottom: 1.875rem;
+
+        @include breakpoint-up(medium) {
+            font-size: 1.25rem;
+            line-height: 2.25rem;
+        }
+    }
+
+    .roi {
+        padding: 5rem 0 2.5rem;
     }
 }

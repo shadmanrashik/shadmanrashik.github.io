@@ -1,6 +1,5 @@
 .integration {
     background: #F4F4F4;
-    // text-align: center;
     overflow: hidden;
     padding: 1.875rem 1.25rem;
 
@@ -12,7 +11,7 @@
 
     @include breakpoint-up(large) {
         grid-template-columns: 1fr 281px;
-        border-radius: 1.875rem;
+        border-radius: 1.25rem;
     }
 
     &__heading {
@@ -21,6 +20,10 @@
         line-height: 1.4375rem;
         font-weight: 900;
         padding-bottom: 1.25rem;
+
+        @include breakpoint-up(large) {
+            padding-bottom: .625rem;
+        }
     }
 
     &__grid {
@@ -28,14 +31,15 @@
 
         @include breakpoint-up(medium) {
             display: grid;
-            grid-template-columns: 200px 300px;
+            grid-template-columns: 11.25rem 300px;
             justify-content: center;
             padding: 1.5625rem;
         }
 
         @include breakpoint-up(large) {
-            grid-template-columns: 200px 1fr;
-            padding: 1.875rem 4.375rem 1.25rem;
+            grid-template-columns: 11.25rem 1fr;
+            padding: 1.875rem 4.375rem 1.25rem 3.125rem;
+            gap: 0 1.875rem;
         }
 
         h2 {
@@ -58,11 +62,24 @@
 
             @include breakpoint-up(large) {
                 grid-template-columns: 1fr 1fr;
-                padding-right: 1.875rem;
             }
 
             .integration__title {
                 grid-column: 1/3;
+            }
+
+            .plus-sign {
+                position: relative;
+
+                &::before {
+                    color: #333;
+                    content: "+";
+                    position: absolute;
+                    font-weight: 900;
+                    top: 24px;
+                    left: -6px;
+                    font-size: 20px;
+                }
             }
         }
 
@@ -70,13 +87,7 @@
             grid-template-columns: repeat(5, minmax(45px, 50px));
 
             @include breakpoint-up(large) {
-                grid-template-columns: repeat(5, minmax(70px, 75px));
-                padding-left: 1.875rem;
-            }
-
-            @include breakpoint-up(large) {
                 grid-template-columns: repeat(5, minmax(70px, 80px));
-                padding-left: 1.875rem;
             }
 
             .integration__title {
@@ -97,28 +108,35 @@
                     }
                 }
             }
-        }
 
-        .plus-sign {
-            position: relative;
+            .plus-sign {
+                position: relative;
 
-            &::before {
-                color: #333;
-                content: "+";
-                position: absolute;
-                font-weight: 900;
-                top: 20px;
-                left: -5px;
-                font-size: 20px;
+                @include breakpoint-up(large) {
+                    min-width: 5.625rem;
+
+                    &::before {
+                        color: #333;
+                        content: "+";
+                        position: absolute;
+                        font-weight: 900;
+                        top: 24px;
+                        left: -3px;
+                        font-size: 20px;
+                    }
+                }
             }
         }
 
         img {
+            border-radius: 50%;
+            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 25%);
             margin: 0 auto;
             margin-bottom: .625rem;
         }
 
         span {
+            display: block;
             font-size: .875rem;
             line-height: 1.125rem;
 
@@ -130,9 +148,13 @@
     }
 
     &__title {
-        // flex: 1 0 100%;
         grid-column: 1/6;
         padding-bottom: .625rem;
+
+        @include breakpoint-up(medium) {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
     }
 
     &__lead {
@@ -148,7 +170,7 @@
 
         @include breakpoint-up(large) {
             padding: 32px 17px 42px 58px;
-            clip-path: polygon(14% 0%,100% 0%,100% 100%,0% 100%);
+            clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
         .integration__heading {
@@ -179,110 +201,7 @@
     }
 
     .profile-circle {
-        border: 3.75px solid #222;
+        border: .3125rem solid #222;
         border-radius: 50%;
     }
-
-    /*
-    @include breakpoint-up(medium) {
-        display: grid;
-        grid-template-columns: 500px 200px;
-        justify-content: center;
-    }
-
-    &__heading {
-        color: $darker;
-        font-size: 1.125rem;
-        line-height: 1.4375rem;
-        font-weight: 900;
-        padding-bottom: 1.25rem;
-
-        @include breakpoint-up(medium) {
-            grid-column: 1/3;
-        }
-    }
-
-    &__grid {
-        @include breakpoint-up(medium) {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-        }
-    }
-
-    &__item {
-        display: grid;
-        justify-content: center;
-        padding-bottom: 1.875rem;
-
-        &:first-child {
-            grid-template-columns: repeat(2, 90px);
-
-            .integration__item-icon {
-                padding: 5px 10px;
-            }
-
-            .plus-sign {
-                position: relative;
-
-                &::before {
-                    color: #333;
-                    content: "+";
-                    position: absolute;
-                    font-weight: 900;
-                    top: 28px;
-                    left: -5px;
-                    font-size: 20px;
-                }
-            }
-        }
-
-        &:last-child {
-            grid-template-columns: repeat(5, 50px);
-
-            .integration__item-icon {
-                font-size: .875rem;
-
-                img {
-                    position: relative;
-                    max-width: none;
-                    width: 3.75rem;
-                    left: -.3125rem;
-                    margin-bottom: .625rem;
-                }
-            }
-        }
-    }
-
-    .person {
-        border: 3.75px solid #222;
-        border-radius: 50%;
-    }
-
-    &__title {
-        // flex: 1 0 100%;
-        grid-column: 1/6;
-        padding-bottom: .625rem;
-    }
-
-    &__list {
-        color: $darker;
-        text-align: left;
-        max-width: 11.9375rem;
-        margin: 0 auto;
-
-
-        >p {
-            position: relative;
-            padding-left: 2rem;
-            padding-bottom: .5rem;
-
-            &::before {
-                content: url(/images/tick.png);
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }
-    }
-    */
 }

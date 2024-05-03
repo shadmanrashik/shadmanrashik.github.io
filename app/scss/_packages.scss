@@ -1,16 +1,19 @@
-.packages {
+.pricing {
     h2 {
-        padding: 0 1.25rem 1.875rem;
+        padding: 0 .9375rem 1.875rem;
     }
 
     &__grid {
         @include breakpoint-up(medium) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            // grid-template-columns: repeat(2, 1fr);
             gap: 1.25rem;
+            justify-content: center;
         }
 
         @include breakpoint-up(large) {
+            display: grid;
             align-items: baseline;
             grid-template-columns: repeat(3, 1fr);
         }
@@ -27,6 +30,7 @@
         @include breakpoint-up(medium) {
             padding: 1.875rem .625rem;
             border-radius: 10px;
+            flex: 0 1 48%;
         }
 
         >*:not(:first-child) {
@@ -38,7 +42,7 @@
             font-size: 1.125rem;
             line-height: 1.4375rem;
 
-            > img {
+            >img {
                 padding-right: .375rem;
             }
         }
@@ -58,7 +62,7 @@
             background: #30B11B;
             color: #fff;
             font-weight: 700;
-            transform: rotate(45deg) translate(29%, -30%);
+            transform: rotate(45deg) translate(27%, -30%);
             width: 200px;
             text-align: center;
         }
@@ -80,7 +84,7 @@
         }
     }
 
-    &__pricing {
+    &__fees {
         text-align: right;
 
         .xtra-lg-text {
@@ -98,31 +102,32 @@
     &__inner-green {
         background-color: #50A342;
         border-radius: .625rem;
-        padding: .625rem;
+        padding: .9375rem .625rem;
         font-weight: 300;
 
-        > *:not(:first-child) {
+        >*:not(:first-child):not(hr) {
             margin-top: .3125rem;
         }
 
-        .packages__item--headline { 
+        > hr {
+            margin-top: .625rem;
+            margin-bottom: .625rem;
+        }
+
+        .packages__item--headline {
             line-height: 36px;
         }
-        
+
         @include breakpoint-up(large) {
             font-size: 1.125rem;
             line-height: 1.4375rem;
-        }        
-
-        > hr {
-            margin-top: .9375rem;
-            margin-bottom: .9375rem;
         }
     }
 
     &__li {
         position: relative;
         padding-left: 1.1875rem;
+        font-weight: 500;
 
         &:not(:first-child) {
             margin-top: .625rem;
@@ -157,7 +162,7 @@
         font-size: 1.125rem;
         font-weight: 300;
 
-        > img {
+        >img {
             margin: 0 auto;
             margin-bottom: 10px;
         }
@@ -170,19 +175,19 @@
 
     .rounded {
         background: $darker;
-        padding: 3px 9px;
+        padding: .1875rem .5625rem;
         border-radius: 100%;
-        margin-right: 5px;
+        margin-right: .1875rem;
     }
 
     .icon-stop {
         display: inline-block;
         background: #fff;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 4px;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 2px;
 
         margin-right: .375rem;
     }
-    
+
 }

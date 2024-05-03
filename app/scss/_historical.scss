@@ -1,31 +1,61 @@
-.historical {
-    background-color: $ligherGreen;
-    color: $niceGreen;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1.375rem;
-
-    padding: 1.875rem 1.25rem;
+.results {
+    padding-top: .9375rem;
+    padding-bottom: 2.5rem;
 
     @include breakpoint-up(large) {
-        border-radius: 20px;
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        // max-width: 65rem;
-        padding: 1.875rem 3.75rem;
+        padding-top: 1.875rem;
     }
 
-    @include breakpoint-up(xlarge) {
-        padding: 1.875rem 8.125rem;
-    }
+    > *:not(:first-child) {
+        margin-top: 1.875rem;
 
-    h2 {
-        font-weight: 900;
-        padding-bottom: .3125rem;
-        
         @include breakpoint-up(large) {
-            font-size: 2.25rem;
-            line-height: 2.8125rem;
+            margin-top: 2.5rem;
+
+            &.results__content {
+                margin-top: 1.875rem;
+            }
+        }
+    }
+
+    &__content {
+        background-color: $ligherGreen;
+        color: $niceGreen;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.375rem;
+        padding: 1.875rem 1.25rem;
+    
+        @include breakpoint-up(large) {
+            border-radius: 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            padding: 1.875rem 3.75rem;
+        }
+    
+        @include breakpoint-up(xlarge) {
+            padding: 1.875rem 8.125rem;
+        }
+
+        h2 {
+            font-weight: 900;
+            padding-bottom: .3125rem;
+            
+            @include breakpoint-up(large) {
+                font-size: 2.25rem;
+                line-height: 2.8125rem;
+            }
+        }
+
+        .label-wrapper {
+            @include breakpoint-down(medium) {
+                display: block;
+            }
+        }
+    
+        .label {
+            display: inline-block;
+            margin: .25rem 0 0;
         }
     }
 
@@ -33,17 +63,6 @@
         @include breakpoint-down(small) {
             margin: 0 -0.5rem;
         }
-    }
-
-    .label-wrapper {
-        @include breakpoint-down(medium) {
-            display: block;
-        }
-    }
-
-    .label {
-        display: inline-block;
-        margin: .25rem 0 0;
     }
 
     &__subtext {
@@ -67,7 +86,30 @@
             padding: 1.25rem 0;
         }
 
-        // apply consisten top margin to all child
+        &:first-child {
+
+            @include breakpoint-up(medium) {
+                border-right: 2px solid #D1F8BA;
+                padding-left: .625rem;
+                padding-right: 1.875rem;
+                // max-width: 20.5625rem;
+            }
+
+            @include breakpoint-up(large) {
+                max-width: 22.5625rem;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+
+            @include breakpoint-up(medium) {
+                padding-left: 1.875rem;
+                padding-right: .625rem;
+            }
+        }
+
+        // apply consistent top margin to all child
         &>*:not(:first-child) {
             margin-top: .3125rem;
 
@@ -155,86 +197,15 @@
             }
         }
 
-        &:first-child {
-
-            @include breakpoint-up(medium) {
-                border-right: 2px solid #D1F8BA;
-                padding-left: .625rem;
-                padding-right: 1.875rem;
-                max-width: 20.5625rem;
-            }
-
-            @include breakpoint-up(large) {
-                max-width: 22.5625rem;
-            }
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-
-            @include breakpoint-up(medium) {
-                padding-left: 1.875rem;
-                padding-right: .625rem;
-            }
-        }
-
-        // &:first-child {
-        //     border-bottom: 2px solid #D1F8BA;
-
-        //     @include breakpoint-down(small) {
-        //         border-top: 2px solid #D1F8BA;
-        //         padding-top: 1.25rem;
-        //         padding-bottom: 1.25rem;
-        //         margin-top: 1.25rem;
-        //     }
-        // }
-
-        // &:last-child {
-        //     @include breakpoint-down(small) {
-        //         padding-top: 1.25rem;
-        //     }
-        // }
-
-        // @include breakpoint-up(medium) {
-        //     flex: 1;
-
-        //     &:first-child {
-        //         border-right: 2px solid #D1F8BA;
-        //         border-bottom: 0;
-        //         // padding-right: 2.5rem;
-        //         padding-right: 1.875rem;
-        //     }
-
-        //     &:last-child {
-        //         // padding-left: 2.5rem;
-        //         margin-left: 1.875rem;
-        //     }
-        // }
-
-        .text-semi-bold {
-            font-weight: 700;
-        }
-
-        .text-bold {
-            font-weight: 800;
-        }
-
-        .text-extra-bold {
-            font-weight: 900;
-        }
-
         .circle {
             display: inline-block;
             width: 1.25rem;
             height: 1.25rem;
             border-radius: 50%;
+            border: 3px solid $niceGreen;
 
-            &-fill {
+            &-filled {
                 background: $niceGreen;
-            }
-
-            &-empty {
-                border: 3px solid $niceGreen;
             }
 
             &:not(:first-child) {
@@ -247,8 +218,8 @@
         }
     }
 
-    .text-small {
-        font-size: .875rem;
-        line-height: 1.375rem;
+    &__winrate {
+        font-size: 1.0625rem;
+        line-height: 1.75rem;
     }
 }

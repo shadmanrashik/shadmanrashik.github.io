@@ -1,21 +1,22 @@
 .profile {
-    &__grid {
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
+    text-align: center;
+    padding: 0 2rem;
+    gap: 1.8125rem 1rem;
 
-        padding: 1.875rem 1.5625rem;
+    @include breakpoint-up(large) {
+        flex-wrap: nowrap;
+        padding-left: 1.6875rem;
+        padding-right: 1.6875rem;
+    }
 
-        @include breakpoint-up(large) {
-            padding-left: 1.6875rem;
-            padding-right: 1.6875rem;
-        }
+    @include breakpoint-up(xlarge) {
+        display: grid;
+        gap: 1.8125rem 1.875rem;
+        grid-template-columns: repeat(3, 137px) 106px 129px 69px 90px;
     }
 
     &__item {
-        flex: 1 0 50%;
-        padding: .4688rem;
-        padding-bottom: 1.875rem;
+        flex: 1 0 47%;
 
         @include breakpoint-up(medium) {
             flex: 1 0 33.33%;
@@ -23,18 +24,11 @@
 
         @include breakpoint-up(large) {
             flex: 1;
-            padding: 0 .9375rem;
             padding-bottom: 0;
         }
 
         >*:not(:first-child) {
             margin-top: .25rem;
-        }
-
-        &:first-child {
-            @include breakpoint-up(medium) {
-                min-width: 10rem;
-            }
         }
 
         &:last-child {
@@ -50,11 +44,15 @@
                 margin: 0 .25rem;
 
                 @include breakpoint-up(large) {
-                    margin-top: .25rem;
+                    margin-top: .125rem;
                     padding: 10px;
                     margin-left: auto;
                     margin-right: auto;
                 }
+            }
+
+            .profile__text {
+                margin-top: 0;
             }
         }
 
@@ -75,8 +73,12 @@
     &__photo {
         border: 8px solid $darker;
         border-radius: 1.25rem;
-        width: 120px;
         margin: 0 auto;
+
+        @include breakpoint-up(large) {
+            width: 130px;
+            height: auto;
+        }
     }
 
     &__ltext {
@@ -96,18 +98,23 @@
         }
     }
 
-    // .label-wrapper {
-    //     max-width: 7.3125rem;
-    //     margin: 0 auto;
-    // }
-
-    .label {
+    &__label {
         background-color: $darker;
         display: inline-block;
-        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
+        font-weight: 300;
+        padding: .125rem .3125rem;
+
+        @include breakpoint-up(large) {
+            font-size: 1.25rem;
+            line-height: 1.5625rem;
+        }
     }
 
     a {
         display: block;
+        font-size: 1.125rem;
+        line-height: 1.4375rem;
     }
 }
