@@ -51,8 +51,9 @@ menuLinks.forEach(link => {
 		e.preventDefault();
 		e.stopPropagation();
 		if (nav.classList.contains('open')) document.getElementById('btnHamburger').click();
+        let scollNegetiveMargin = window.innerWidth < 1024 ? 40 : 50
 		let targetElem = document.querySelector(e.target.getAttribute('href'));
-		let scrollDepth = targetElem.getBoundingClientRect().top + window.scrollY - 80;
+		let scrollDepth = targetElem.getBoundingClientRect().top + window.scrollY - scollNegetiveMargin;
 		window.scrollTo({
 			top: scrollDepth,
 			left: 0,
