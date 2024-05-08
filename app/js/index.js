@@ -43,7 +43,7 @@ btnHamburger.addEventListener('click', function (e) {
 	}
 });
 
-const menuLinks = document.querySelectorAll('.navigation__links, .nav__menu > a')
+const menuLinks = document.querySelectorAll('.navigation__links, .nav__menu > a, .profile__nav-links')
 menuLinks.forEach(link => {
 	link.addEventListener('click', function (e) {
 		e.preventDefault();

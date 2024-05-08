@@ -27,22 +27,22 @@
             &:not(:last-child)::after {
                 content: '';
                 position: absolute;
-                bottom: 4px;
+                bottom: .25rem;
                 left: 50%;
                 transform: translateX(-50%);
-                height: 8px;
+                height: .5rem;
                 width: 85%;
                 background: #fff;
             }
 
             &:first-child {
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
+                border-top-left-radius: 1.25rem;
+                border-top-right-radius: 1.25rem;
             }
             
             &:last-child {
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 1.25rem;
+                border-bottom-right-radius: 1.25rem;
             }
         }
 
@@ -126,7 +126,7 @@
         font-size: 2.6875rem;
         line-height: 4.5rem;
         font-weight: 900;
-        box-shadow: 0 0 24.78px 0 rgba(0, 0, 0, 25%);
+        box-shadow: 0 0 1.5488rem 0 rgba(0, 0, 0, 25%);
         
         margin-bottom: .625rem;
     }

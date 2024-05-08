@@ -72,9 +72,11 @@ button,
     cursor: pointer;
     border: none;
     border-radius: .625rem;
-    box-shadow: 0 .25rem .25rem 0 rgb(0 0 0 / 25%);
+    box-shadow: 0 .125rem .25rem 0 rgb(0 0 0 / 25%);
+    text-decoration: none;
 
-    padding: 10px 20px;
+    display: inline-block;
+    padding: .625rem 1.25rem;
     font-size: 1.25rem;
     line-height: 1.5625rem;
     font-weight: 500;
@@ -153,9 +155,9 @@ h2.section--heading {
                 content: '';
                 position: absolute;
                 top: 50%;
-                border-bottom: 1px solid #D9D9D9;
+                border-bottom: .0625rem solid #D9D9D9;
                 width: 100vw;
-                margin: 0 20px;
+                margin: 0 1.25rem;
             }
 
             &::before {

@@ -33,6 +33,10 @@
             flex: 0 1 48%;
         }
 
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
+        }
+
         >*:not(:first-child) {
             margin-top: 1.25rem;
         }

@@ -36,6 +36,23 @@
     &__item {
         flex: 1 0 50%;
         max-width: 7.5rem;
+        transition: color .1s ease-in-out;
+        font-weight: 400;
+        color: $text;
+        text-decoration: none;
+
+        // &:not(:hover) {
+        // }
+
+        &:hover {
+            .screens__icon {
+                display: none;
+
+                &--hover {
+                    display: block;
+                }
+            }
+        }
 
         @include breakpoint-up(medium) {
             flex: 1 0 20%;
@@ -60,7 +77,7 @@
                     margin: 0;
                 }
 
-                >p {
+                >span {
                     padding-bottom: .625rem;
                 }
             }
@@ -68,7 +85,7 @@
             @include breakpoint-up(medium) {
                 max-width: 8.125rem;
 
-                >p {
+                >span {
                     font-size: 1.125rem;
                     line-height: 1.4375rem;
                 }
@@ -83,7 +100,8 @@
             }
         }
 
-        >p {
+        >span {
+            display: block;
             padding: .625rem;
 
             @include breakpoint-down(medium) {
@@ -95,6 +113,12 @@
                 font-size: 1.25rem;
                 line-height: 1.75rem;
             }
+        }
+    }
+
+    &__icon {
+        &--hover {
+            display: none;
         }
     }
 }
