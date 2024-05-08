@@ -16,10 +16,17 @@
         padding-bottom: 1.25rem;
     }
 
-    &__grid {
+    &__flex {
         padding: 0 1.875rem;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
+        max-width: 26.25rem;
+        margin: 0 auto;
+
+        @include breakpoint-up(medium) {
+            max-width: none;
+        }
 
         @include breakpoint-up(large) {
             padding: 0 .625rem;
@@ -28,17 +35,21 @@
 
     &__item {
         flex: 1 0 50%;
+        max-width: 7.5rem;
 
         @include breakpoint-up(medium) {
-            flex: 1 0 33.33%;
+            flex: 1 0 20%;
         }
 
         @include breakpoint-up(large) {
             flex: 1;
+            max-width: none;
         }
 
         &.figma {
-            @include breakpoint-down(medium) {
+            max-width: none;
+
+            @include breakpoint-down(small) {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -54,7 +65,9 @@
                 }
             }
 
-            @include breakpoint-up(large) {
+            @include breakpoint-up(medium) {
+                max-width: 8.125rem;
+
                 >p {
                     font-size: 1.125rem;
                     line-height: 1.4375rem;

@@ -1,6 +1,6 @@
 .quality {
     h2 {
-        padding-bottom: 1.25rem;
+        padding-bottom: 1.875rem;
     }
 
     &__grid {
@@ -18,12 +18,12 @@
 
     &__item {
         flex: 1 0 100%;
-        border-radius: 1.25rem;
+        border-radius: .625rem;
         box-shadow: inset 0 4px 20px 0 rgba(0, 0, 0, 50%);
         min-height: 17.875rem;
         position: relative;
         overflow: hidden;
-        
+
         @include breakpoint-up(large) {
             min-height: 19.375rem;
         }
@@ -31,14 +31,14 @@
         &.item-a {
             background: url(/images/image_542.jpg) 35% 0;
             height: 29.375rem;
-        
+
             @include breakpoint-up(medium) {
                 height: 19.375rem;
             }
         }
 
         &.item-b {
-            background: url(/images/image_541.jpg) 97% 0;
+            background: url(/images/image_541.jpg) 41% 0;
             min-height: 32.5rem;
 
             @include breakpoint-up(medium) {
@@ -49,24 +49,37 @@
         &.item-c {
             background: url(/images/image_547.jpg) 97% 0;
             flex: 1 0 49%;
+            min-height: 20.3125rem;
 
             @include breakpoint-up(medium) {
+                background: url(/images/image_547.jpg) 97% 0;
                 min-height: 20.3125rem;
             }
         }
 
         &.item-d {
-            background: url(/images/image_544.jpg) 97% 0;
+            background: url(/images/image_544.jpg) 8% -33%;
             flex: 1 0 49%;
 
             @include breakpoint-up(medium) {
+                background: url(/images/image_544.jpg) 97% 0;
                 min-height: 19.375rem;
             }
         }
 
         &.item-e {
-            background: url(/images/image_549.jpg) 69% -86%;
-            min-height: 29.0625rem
+            // background: url(/images/image_549.jpg) 69% -86%;
+            // min-height: 29.0625rem;
+
+            background: url(/images/image_549.jpg) 51% 0%;
+            min-height: 29.0625rem;
+            background-size: 153%;
+            background-repeat: no-repeat;
+
+            @include breakpoint-up(medium) {
+                background: url(/images/image_549.jpg) 74% 0;
+                min-height: 22.5rem;
+            }
         }
     }
 
@@ -120,6 +133,10 @@
         right: .9375rem;
         font-size: .875rem;
         line-height: 1.125rem;
+
+        &:not(.text-white) {
+            color: $darker;
+        }
 
         img {
             margin-left: .3125rem;

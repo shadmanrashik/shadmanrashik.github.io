@@ -8,8 +8,11 @@
     &__item {
         position: relative;
         background: $ligherGreen;
-        margin-bottom: 1.25rem;
         padding: 1.875rem 0;
+
+        &:not(:last-child) {
+            margin-bottom: 1.875rem;
+        }
 
         @include breakpoint-up(large) {
             margin-bottom: 0;
