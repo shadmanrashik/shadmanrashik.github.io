@@ -20,6 +20,10 @@
             font-size: 1.25rem;
             line-height: 1.75rem;
 
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+
             &:not(:last-child)::after {
                 content: '';
                 position: absolute;

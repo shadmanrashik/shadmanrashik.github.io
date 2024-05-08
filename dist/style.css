@@ -179,6 +179,10 @@ h3 {
   color: #fff;
 }
 
+.text-darker {
+  color: #1a1a1a;
+}
+
 .text-light {
   font-weight: 300;
 }
@@ -1413,6 +1417,9 @@ h3 {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+  .ideas__item:not(:last-child) {
+    margin-bottom: 0;
+  }
   .ideas__item:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1533,7 +1540,7 @@ h3 {
   }
 }
 .quality__item.item-a {
-  background: url(/images/image_542.jpg) 35% 0;
+  background: url(/images/image_542.jpg) 35% 0 no-repeat;
   height: 29.375rem;
 }
 @media (min-width: 48em) {
@@ -1542,44 +1549,45 @@ h3 {
   }
 }
 .quality__item.item-b {
-  background: url(/images/image_541.jpg) 41% 0;
+  background: url(/images/image_541.jpg) 96% -8% no-repeat;
   min-height: 32.5rem;
 }
 @media (min-width: 48em) {
   .quality__item.item-b {
+    background-position: 91% 0;
     min-height: 22.6875rem;
   }
 }
 .quality__item.item-c {
-  background: url(/images/image_547.jpg) 97% 0;
-  flex: 1 0 49%;
+  background: url(/images/image_547.jpg) 50% 0%/cover no-repeat;
+  flex: 1 0 48%;
   min-height: 20.3125rem;
 }
 @media (min-width: 48em) {
   .quality__item.item-c {
-    background: url(/images/image_547.jpg) 97% 0;
     min-height: 20.3125rem;
   }
 }
 .quality__item.item-d {
-  background: url(/images/image_544.jpg) 8% -33%;
-  flex: 1 0 49%;
+  background: url(/images/image_544.jpg) 8% -58% no-repeat;
+  flex: 1 0 48%;
 }
 @media (min-width: 48em) {
   .quality__item.item-d {
-    background: url(/images/image_544.jpg) 97% 0;
+    background-position: 97% 0;
+    background-size: 100%;
     min-height: 19.375rem;
   }
 }
 .quality__item.item-e {
-  background: url(/images/image_549.jpg) 51% 0%;
+  background: url(/images/image_549.jpg) 51% 0%/cover no-repeat;
   min-height: 29.0625rem;
   background-size: 153%;
   background-repeat: no-repeat;
 }
 @media (min-width: 48em) {
   .quality__item.item-e {
-    background: url(/images/image_549.jpg) 74% 0;
+    background-size: auto;
     min-height: 22.5rem;
   }
 }
@@ -1630,13 +1638,10 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.125rem;
 }
-.quality__figma:not(.text-white) {
-  color: #1a1a1a;
-}
 .quality__figma img {
   margin-left: 0.3125rem;
 }
-.quality .circle {
+.quality__circle {
   display: inline-block;
   width: 1.75rem;
   height: 1.75rem;
@@ -1648,7 +1653,7 @@ h3 {
   border-radius: 50%;
 }
 @media (min-width: 64em) {
-  .quality .circle {
+  .quality__circle {
     width: 3.5rem;
     height: 3.5rem;
     font-size: 1.625rem;
